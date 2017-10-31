@@ -10,7 +10,7 @@ properties of a new object
 
 ## Overview
 1. Review of Objects
-2. Intro to OOP in JS
+2. Intro to Classes in JS
 3. Classes in ES6
 4. Inheritance
 
@@ -38,105 +38,61 @@ let car = {
 }
 ```
 
-### 2. Intro to OOP concepts in JS (5 minutes)
+### 2. Intro to classes in JS (3 minutes)
 
-We've already done some object-oriented programming in Ruby, but before we
-get in to OOP in JS there are a few loose ends we need to tie up:
+#### Vocabulary:
 
-<details>
-    <summary>1. What is context?</summary>
+**Class** - An object that models real world things in our application
 
-    A reference (through `this`) to the object that owns the currently executing code.
-</details>
-<details>
-    <summary>2. What is scope?</summary>
+**Instance** - An object defined by our class
 
-    Where variables are accessible during function invocation.
-</details>
-<details>
-    <summary>3. What `type` is a function?</summary>
+**Constructor** - The function that defines instances of our class
 
-    Well it's a function, but a function is a type of object!
-</details>
-<details>
-    <summary>4. Why does it matter that functions are objects in JS?</summary>
-
-    That allows us to attach functions as properties on objects.
-</details>
-<details>
-    <summary>5. Do functions have context?</summary>
-
-    They do!
-</details>
 
 ### 3. Classes in ES6 (10 minutes / 0:25)
 Classes were introduced in ES5, and were instantiated with the following syntax:
 
 ```js
-function Card(rank, suit, score) {
-  this.rank = rank;
-  this.suit = suit;
-  this.score = score;
-  this.title = `${rank} of ${suit}`;
-  this.isHigher = (cardOne, cardTwo) => cardOne > cardTwo;
+function Car (make, model, color) {
+  this.make = make;
+  this.model = model;
+  this.color = color;
+  this.drive = function () {
+    console.log('vroom vroom')
+  }
 }
 ```
 
 With ES6, the language was updated to bring the syntax more inline with how other popular programming languages handle OOP. This includes the introduction of the `class` keyword. Nothing changed under the hood, just what we type to create a class.
 
 ```js
-class Card {
-  constructor(rank, suit, score) {
-    this.rank = rank;
-    this.suit = suit;
-    this.score = score;
-    this.title = `${rank} of ${suit}`;
-  }
 
-  isHigher(cardOne, cardTwo) {
-    return cardOne > cardTwo;
+  class Car {
+    constructor(make, model, color) {
+      this.make = make
+      this.model = model
+      this.color = color
+    }
+
+    drive() {
+      console.log('vroom vroom')
+    }
+
+    gps( location ) {
+      console.log(`beep beep, driving to ${location}`)
+    }
+
+    paint( newColor ) {
+      this.color = newColor
+    }
   }
-}
 ```
-
-#### Vocabulary:
-
-**Class** - an object that models real world things in our application
-
-**Instance** - a object defined by our class
-
-**Constructor** - the function that defines instances of our class
-
-<details>
-  <summary>Solution</summary>
-
-```js
-class Car {
-  constructor(make, model, color) {
-    this.make = make
-    this.model = model
-    this.color = color
-  }
-
-  drive() {
-    console.log('vroom vroom')
-  }
-
-  gps( location ) {
-    console.log(`beep beep, driving to ${location}`)
-  }
-
-  paint( newColor ) {
-    this.color = newColor
-  }
-}
-```
-
-</details>
 
 ### 4. Inheritance (15 minutes / 1:30)
 
-Often we'll need to take our class and expand on it for particular types of implementations of it. Think about types of Cars, for instance. For this case, we create sub-classes through a process called Inheritance.
+- Often we'll need to take our class and expand on it.
+- Think about types of Cars, for instance.
+- For this case, we create sub-classes through a process called Inheritance.
 
 In ES6, we extend an existing class with the `extend` keyword. This will let us create a subclass:
 
