@@ -1,32 +1,18 @@
-# Object-Oriented Programming in Javascript
+# Prototypal Inheritance in Object-Oriented Javascript
 
 ## Learning Objectives
-- Answer the question, what is Object-Oriented Programming (OOP)?
-- Identify and define: a class, an instance, and a constructor
-- Create a class
-- Use the `new` keyword to create instances of a class
-- Define the concept of inheritance as it pertains to classes
-- Create a class that inherits from another using the `extends` and `super` keywords
+- Demonstrate a use case that explains prototypal inheritance and
+what kind of flexibility it gives to programmers
+- Use namespaces to organize application code
+- Define a custom constructor method that sets one or more
+properties of a new object
+
 
 ## Overview
 1. Review of Objects
 2. Intro to OOP in JS
 3. Classes in ES6
 4. Inheritance
-
-## Schedule
-| Time | Section |
-| --- | --- |
-| 10 min | Review Objects |
-| 10 min | Intro to OOP |
-| 15 min | Defining a Class |
-| 10 min | Domain Modeling and build your first class |
-| 10 min | Classes in ES6 |
-| 20 min | Make an ATM Class |
-| 10 min | Break |
-| 15 min | Inheritance |
-| 20 min | Inheritance Exercise |
-| 10 min | Closing |
 
 ## Intro
 
@@ -54,10 +40,45 @@ let car = {
 }
 ```
 
+### 2. Intro to OOP in JS (5 minutes / 0:15)
+
+Before we get in to OOP in JS there are a few loose ends we need to tie up:
+
+<details>
+    <summary>1. What is context?</summary>
+
+    A reference (through `this`) to the object that owns the currently executing code.
+</details>
+<details>
+    <summary>2. What is scope?</summary>
+
+    Where variables are accessible during function invocation.
+</details>
+<details>
+    <summary>3. What `type` is a function?</summary>
+
+    Well it's a function, but a function is a type of object!
+</details>
+<details>
+    <summary>4. Do functions have context?</summary>
+
+    They do!
+</details>
+
 ### 3. Classes in ES6 (10 minutes / 0:25)
+Classes were introduced in ES5,
+
 Understanding the old syntax is important for understanding the new syntax. With ES6, the language was updated to bring the syntax more inline with how other popular programming languages handle OOP. This includes the introduction of the `class` keyword. Nothing changed under the hood, just what we type to create a class.
 
 Lets checkout `three.js` in the `exercises/` folder!
+
+#### Vocabulary:
+
+**Class** - an object that models real world things in our application
+
+**Instance** - a object defined by our class
+
+**Constructor** - the function that defines instances of our class
 
 <details>
   <summary>Solution</summary>
@@ -85,9 +106,6 @@ class Car {
 ```
 
 </details>
-
-
-## Break (10 minutes / 1:15)
 
 ### 4. Inheritance (15 minutes / 1:30)
 
