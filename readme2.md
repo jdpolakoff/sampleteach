@@ -70,11 +70,34 @@ get in to OOP in JS there are a few loose ends we need to tie up:
 </details>
 
 ### 3. Classes in ES6 (10 minutes / 0:25)
-Classes were introduced in ES5,
+Classes were introduced in ES5, and were instantiated with the following syntax:
 
-Understanding the old syntax is important for understanding the new syntax. With ES6, the language was updated to bring the syntax more inline with how other popular programming languages handle OOP. This includes the introduction of the `class` keyword. Nothing changed under the hood, just what we type to create a class.
+```js
+function Card(rank, suit, score) {
+  this.rank = rank;
+  this.suit = suit;
+  this.score = score;
+  this.title = `${rank} of ${suit}`;
+  this.isHigher = (cardOne, cardTwo) => cardOne > cardTwo;
+}
+```
 
-Lets checkout `three.js` in the `exercises/` folder!
+With ES6, the language was updated to bring the syntax more inline with how other popular programming languages handle OOP. This includes the introduction of the `class` keyword. Nothing changed under the hood, just what we type to create a class.
+
+```js
+class Card {
+  constructor(rank, suit, score) {
+    this.rank = rank;
+    this.suit = suit;
+    this.score = score;
+    this.title = `${rank} of ${suit}`;
+  }
+
+  isHigher(cardOne, cardTwo) {
+    return cardOne > cardTwo;
+  }
+}
+```
 
 #### Vocabulary:
 
