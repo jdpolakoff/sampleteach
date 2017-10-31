@@ -20,8 +20,6 @@ properties of a new object
 
 The important thing to remember about objects is that they encapsulate related data and behavior into an organized structure. We saw this when we discussed **object literal notation**. Recall that we can define an object like this:
 
-Lets check out `one.js` in the `demos/` folder!
-
 ```js
 let car = {
   make: "Honda",
