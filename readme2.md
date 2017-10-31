@@ -7,7 +7,6 @@ what kind of flexibility it gives to programmers
 - Define a custom constructor method that sets one or more
 properties of a new object
 
-
 ## Overview
 1. Review of Objects
 2. Intro to Classes in JS
@@ -38,9 +37,9 @@ let car = {
 }
 ```
 
-### 2. Intro to classes in JS (3 minutes)
+### 2. Intro to classes in ES6 (3 minutes)
 
-#### Vocabulary:
+# Vocabulary:
 
 **Class** - An object that models real world things in our application
 
@@ -49,7 +48,7 @@ let car = {
 **Constructor** - The function that defines instances of our class
 
 
-### 3. Classes in ES6 (10 minutes / 0:25)
+### 3. Classes in ES5 vs. Classes in ES6 (5 minutes)
 Classes were introduced in ES5, and were instantiated with the following syntax:
 
 ```js
@@ -62,7 +61,6 @@ function Car (make, model, color) {
   }
 }
 ```
-
 With ES6, the language was updated to bring the syntax more inline with how other popular programming languages handle OOP. This includes the introduction of the `class` keyword. Nothing changed under the hood, just what we type to create a class.
 
 ```js
@@ -88,11 +86,10 @@ With ES6, the language was updated to bring the syntax more inline with how othe
   }
 ```
 
-### 4. Inheritance (15 minutes / 1:30)
+### 4. Inheritance (5 minutes)
 
-- Often we'll need to take our class and expand on it.
-- Think about types of Cars, for instance.
-- For this case, we create sub-classes through a process called Inheritance.
+- Often we'll need to take our class and expand on it.Think about types of Cars, for instance.
+For this case, we create sub-classes through a process called Inheritance.
 
 In ES6, we extend an existing class with the `extend` keyword. This will let us create a subclass:
 
@@ -104,14 +101,15 @@ class Car {
   }
 }
 
-class Toyota extends Card {
+class Toyota extends Car {
   drive() {
     console.log('vroom vroom')
   }
 }
 ```
 
-If we have properties that we want to add to our subclass, we still need to take in the properties for our parent class, and pass them up to our parent class with `super`.
+If we have properties that we want to add to our subclass, we still need to take in the properties for our parent class, and pass them up to our parent class with `super`. Super calls the
+constructor function on the parent class.
 
 ```js
 class Car {
@@ -121,7 +119,7 @@ class Car {
   }
 }
 
-class Toyota extends Card {
+class Toyota extends Car {
   constructor(model, color) {
     super(model, color)
     this.make = 'Toyota'
@@ -132,12 +130,6 @@ class Toyota extends Card {
 }
 ```
 
-## You Do: [Inheritance](https://git.generalassemb.ly/ga-wdi-exercises/es6-classes-inheritance-practice) (20 minutes / 1:50)
-
-> 15 minutes exercise. 5 minutes review.
-
--------
-
 ## Closing / Questions (10 minutes / 2:00)
 
 * What are the benefits to using an OOP approach to programming?
@@ -145,19 +137,3 @@ class Toyota extends Card {
 * What does it mean to use "inheritance" when working with classes?
 * How do we indicate that one class inherits from another?
 * What does `super` mean?
-
-## Homework: [Geometry](https://git.generalassemb.ly/ga-wdi-exercises/js_geometry)
-
-## Additional Reading
-
-* [MDN Documentation on Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
-* [Introduction to Javascript ES6 Classes](https://strongloop.com/strongblog/an-introduction-to-javascript-es6-classes/)
-* [Getters, Setters, and Organizing Responsibility in Javascript](http://raganwald.com/2015/08/24/ready-get-set-go.html)
-* [Static Members in ES6](http://odetocode.com/blogs/scott/archive/2015/02/02/static-members-in-es6.aspx)
-* [Lesson: JS View Classes](https://git.generalassemb.ly/ga-wdi-lessons/js-view-classes)
-
-#### Prototypical Inheritance
-
-* [Inheritance and the Prototype Chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
-* [ES6 Classes and Javascript Prototypes](https://reinteractive.com/posts/235-es6-classes-and-javascript-prototypes)
-* [Master the Javascript Interview: What's the Difference Between Class & Prototypical Inheritance](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9#.uzl8ohf8c)
