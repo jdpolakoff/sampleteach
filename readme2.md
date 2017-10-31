@@ -16,7 +16,7 @@ properties of a new object
 
 ## Intro
 
-### 1. Review of Objects in JS (10 minutes / 0:10)
+### 1. Review of Objects in JS (3 minutes)
 
 The important thing to remember about objects is that they encapsulate related data and behavior into an organized structure. We saw this when we discussed **object literal notation**. Recall that we can define an object like this:
 
@@ -38,9 +38,10 @@ let car = {
 }
 ```
 
-### 2. Intro to OOP in JS (5 minutes / 0:15)
+### 2. Intro to OOP concepts in JS (5 minutes)
 
-Before we get in to OOP in JS there are a few loose ends we need to tie up:
+We've already done some object-oriented programming in Ruby, but before we
+get in to OOP in JS there are a few loose ends we need to tie up:
 
 <details>
     <summary>1. What is context?</summary>
@@ -58,7 +59,12 @@ Before we get in to OOP in JS there are a few loose ends we need to tie up:
     Well it's a function, but a function is a type of object!
 </details>
 <details>
-    <summary>4. Do functions have context?</summary>
+    <summary>4. Why does it matter that functions are objects in JS?</summary>
+
+    That allows us to attach functions as properties on objects.
+</details>
+<details>
+    <summary>5. Do functions have context?</summary>
 
     They do!
 </details>
