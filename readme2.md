@@ -2,9 +2,10 @@
 
 ## What does that mean?
 
-All we're talking about is how JavaScript allows us to share code among objects.
+All we're talking about is how JavaScript allows us to share code among objects. In JavaScript,
+prototypes are simply objects that help define the behavior of other objects by passing down data and functionality. (More on that later.)
 
-## Why is prototypal inheritance important?
+## Why is prototypal inheritance good for developers?
 
 1) It allow us to write less code -- remember the DRY (Don't Repeat Yourself) principle.
 2) It allows us to write code that is better-organized and more maintainable for other developers.
@@ -75,7 +76,7 @@ Before we get deeper in to OOP in JS there are a few loose ends we need to tie u
 
 **What is a class?**
 
-1) A class is an object we can use to help us create new objects.
+1) A class is an object we can use to help us create new objects and define the behavior of new objects.
 
 2) Classes can also pass data and functionality to sub-classes.
 
