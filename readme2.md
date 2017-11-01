@@ -21,7 +21,7 @@ This will be especially important when you're working on large projects with oth
 3. Classes in ES6
 4. Inheritance
 
-### 1. Review of Objects in JS (2 minutes)
+### 1. Review of Objects in JS (3 minutes)
 
 **Objects encapsulate related data and behavior into an organized structure.**
 
@@ -71,13 +71,13 @@ Before we get deeper in to OOP in JS there are a few loose ends we need to tie u
     They do!
 </details>
 
-### 2. Intro to classes in ES6 (3 minutes)
+### 2. Intro to classes in ES6 (5 minutes)
 
 **What is a class?**
 
 1) A class is an object we can use to help us create new objects and define the behavior of new objects.
 
-2) Classes can also pass data and functionality to sub-classes.
+2) Classes can also pass data and functionality to sub-classes through prototypal inheritance.
 
 Let's take a look at an ES6 class.
 
@@ -161,3 +161,6 @@ class Toyota extends Car {
   }
 }
 ```
+
+Write the above code into your console and then run ```Object.getPrototypeOf(Toyota)```.
+What do you get?
