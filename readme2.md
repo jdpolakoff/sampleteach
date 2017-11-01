@@ -11,9 +11,9 @@ Prototypal Inheritance is how JavaScript allows us to share code among objects. 
 This will be especially important when you're working on large projects with other developers.
 
 ## Learning Objectives
-- Understand how prototypal inheritance gives programmers additional flexibility.
 - Understand how to use namespaces to organize application code.
 - Understand how to use a custom constructor method to set one or more properties on a new object.
+- Understand how prototypal inheritance gives programmers additional flexibility.
 
 ## Overview
 1. Review of Objects
@@ -42,7 +42,7 @@ We're doing two really important things here:
   1. We're modeling some real world thing (in this case, a car) inside our code.
   2. All the data and behavior for that thing is accessible in a single place.
 
-The second point is the basis of Object-Oriented Programming and what makes it so powerful.
+The first point is the basis of Object-Oriented Programming and what makes it so powerful.
 
 Why might we want to model real world things in our code?
 
