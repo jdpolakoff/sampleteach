@@ -17,9 +17,8 @@ This will be especially important when you're working on large projects with oth
 
 ## Overview
 1. Review of Objects
-2. Intro to Classes in JS
-3. Classes in ES6
-4. Inheritance
+2. Classes in ES6
+3. Inheritance
 
 ### 1. Review of Objects in JS (3 minutes)
 
@@ -71,7 +70,7 @@ Before we get deeper in to OOP in JS there are a few loose ends we need to tie u
     They do!
 </details>
 
-### 2. Intro to classes in ES6 (5 minutes)
+### 2. Classes in ES6 (5 minutes)
 
 **What is a class?**
 
