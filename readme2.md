@@ -76,7 +76,7 @@ Before we get deeper in to OOP in JS there are a few loose ends we need to tie u
 
 **What is a class?**
 
-A class is simply an object that we can use to help us create new objects. Classes pass down data and functionality to other objects. In other words, they are prototypes. (More on that in a minute).
+A class is an object we can use to help us create new objects. Classes pass down data and functionality to other objects. In other words, they are prototypes. (More on that in a minute).
 
 Let's take a look at an ES6 class.
 
