@@ -39,8 +39,8 @@ let car = {
 ```
 We're doing two really important things here:
 
-  1. We're encapsulating all data and behavior for a car inside a single object (i.e. a single place)
-  2. We're modeling some real world thing inside our code
+  1. We're modeling some real world thing (in this case, a car) inside our code.
+  2. All the data and behavior for that thing is accessible in a single place.
 
 The second point is the basis of Object-Oriented Programming and what makes it so powerful.
 
