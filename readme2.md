@@ -8,16 +8,15 @@ share code among objects.
 ## Why is that important?
 
 By taking advantage of JavaScript's prototypal inheritance,
-we can write less code that is better-organized and more
-maintainable while also conserving memory.
-
+we can write less code that is better-organized and more maintainable
+than non-object-oriented JavaScript. It also conserves memory.
 
 ## Learning Objectives
-- Demonstrate a use case that explains *prototypal inheritance* and
-what kind of flexibility it gives to programmers
-- Use namespaces to organize application code
-- Define a custom constructor method that sets one or more
-properties of a new object
+- Understand how *prototypal inheritance* gives programmers additional
+flexibility.
+- Understand how to use namespaces to organize application code.
+- Understand how to use a custom constructor method to set one or more
+properties on a new object.
 
 ## Overview
 1. Review of Objects
