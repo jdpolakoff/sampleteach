@@ -8,8 +8,10 @@ share code among objects.
 ## Why is that important?
 
 By taking advantage of JavaScript's prototypal inheritance,
-we can write less code that is better-organized and more maintainable
-than non-object-oriented JavaScript. It also conserves memory.
+we can:
+
+1) Write less code.
+2) Write code that is better-organized and more maintainable for other developers.
 
 ## Learning Objectives
 - Understand how *prototypal inheritance* gives programmers additional
