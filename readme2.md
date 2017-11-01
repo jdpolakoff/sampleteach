@@ -3,12 +3,12 @@
 ## What does that mean?
 
 All we're talking about is how JavaScript allows us to
-share code among objects.
+share code among objects. It's a fairly simple concept
+with a fancy name.
 
-## Why is that important?
+## Why is prototypal inheritance important?
 
-By taking advantage of JavaScript's prototypal inheritance,
-we can:
+It allows us to:
 
 1) Write less code.
 2) Write code that is better-organized and more maintainable for other developers.
