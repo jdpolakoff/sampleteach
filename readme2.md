@@ -1,7 +1,7 @@
 # Prototypal Inheritance in Object-Oriented Javascript
 
 ## Learning Objectives
-- Demonstrate a use case that explains prototypal inheritance and
+- Demonstrate a use case that explains *prototypal inheritance* and
 what kind of flexibility it gives to programmers
 - Use namespaces to organize application code
 - Define a custom constructor method that sets one or more
@@ -44,10 +44,12 @@ let car = {
   }
 }
 ```
+**But what if we want a faster, more efficient way to build JS objects?
+ Enter ES6 Classes**
 
 ### 2. Intro to classes in ES6 (3 minutes)
 
-# Vocabulary:
+# Vocabulary we'll need to know:
 
 **Class** - An object that models real world things in our application
 
@@ -55,21 +57,23 @@ let car = {
 
 **Constructor** - The function that defines instances of our class
 
+**Inheritance** - The passing down of properties from a parent class to a subclass
 
-### 3. Classes in ES5 vs. Classes in ES6 (5 minutes)
-Classes were introduced in ES5, and were instantiated with the following syntax:
+With ES6, JavaScript introduced the `class` keyword that we use to create a class.
+<details>
+  <summary>This was the ES5 syntax</summary>
 
-```js
-function Car (make, model, color) {
-  this.make = make;
-  this.model = model;
-  this.color = color;
-  this.drive = function () {
-    console.log('vroom vroom')
+  ```js
+  function Car(make, model, color) {
+    this.make = make;
+    this.model = model;
+    this.color = color;
+    this.drive = () => console.log('vroom vroom');
+    this.gps = location => console.log(`driving to ${location}`);
+    this.paint = newColor => (this.color = newColor);
   }
-}
-```
-With ES6, the language was updated to bring the syntax more inline with how other popular programming languages handle OOP. This includes the introduction of the `class` keyword. Nothing changed under the hood, just what we type to create a class.
+  ```
+</details>
 
 ```js
 
