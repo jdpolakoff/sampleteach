@@ -139,29 +139,9 @@ Let's take a look at an ES6 class.
 
 - For these cases, we create sub-classes through a process called *inheritance.*
 
-In ES6, we extend an existing class with the `extend` keyword. This will let us create a subclass:
+In ES6, we extend an existing class with the `extend` keyword. This will let us create a subclass.
 
-```js
-class Car {
-  constructor(model, color) {
-    this.model = model
-    this.color = color
-  }
-}
-
-class Toyota extends Card {
-  constructor(model, color) {
-    super(model, color)
-    this.make = 'Toyota'
-  }
-  drive() {
-    console.log('vroom vroom')
-  }
-}
-```
-
-If we have properties that we want to add to our subclass, we still need to take in the properties for our parent class, and pass them up to our parent class with `super`. Super calls the
-constructor function on the parent class.
+If we have properties that we want to add to our subclass from our parent class, we need to call the `super` method. `Super` calls the constructor function on the parent class.
 
 ```js
 class Car {
@@ -181,11 +161,3 @@ class Toyota extends Car {
   }
 }
 ```
-
-## Closing / Questions (10 minutes / 2:00)
-
-* What are the benefits to using an OOP approach to programming?
-* What is a class? What is `new`? How are they related?
-* What does it mean to use "inheritance" when working with classes?
-* How do we indicate that one class inherits from another?
-* What does `super` mean?
