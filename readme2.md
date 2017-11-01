@@ -3,7 +3,6 @@
 ## What does that mean?
 
 All we're talking about is how JavaScript allows us to share code among objects.
-That's it. It's a simple concept with a fancy name.
 
 ## Why is prototypal inheritance important?
 
@@ -76,7 +75,9 @@ Before we get deeper in to OOP in JS there are a few loose ends we need to tie u
 
 **What is a class?**
 
-A class is an object we can use to help us create new objects. Classes pass down data and functionality to other objects. In other words, they can function as prototypes. (More on that in a minute).
+1) A class is an object we can use to help us create new objects.
+
+2) Classes can also pass data and functionality to sub-classes.
 
 Let's take a look at an ES6 class.
 
@@ -130,7 +131,7 @@ Let's take a look at an ES6 class.
   ```
 </details>
 
-### We Do: Let's create an instance of Car with the ```new``` keyword (1 minute)
+#### We Do: Let's create an instance of Car with the ```new``` keyword (1 minute)
 
 ### 3. Inheritance (5 minutes)
 
@@ -142,13 +143,17 @@ In ES6, we extend an existing class with the `extend` keyword. This will let us 
 
 ```js
 class Car {
-  constructor(make, color) {
-    this.make = make
+  constructor(model, color) {
+    this.model = model
     this.color = color
   }
 }
 
-class Toyota extends Car {
+class Toyota extends Card {
+  constructor(model, color) {
+    super(model, color)
+    this.make = 'Toyota'
+  }
   drive() {
     console.log('vroom vroom')
   }
