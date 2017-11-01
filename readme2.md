@@ -1,11 +1,11 @@
 # Prototypal Inheritance in Object-Oriented Javascript
 
-**What does that mean?**
+## What does that mean?
 
 While it sounds complicated, all we're talking about is how
 JavaScript allows us to share code among different objects.
 
-**Why is it important?**
+##Why is it important?**
 
 By taking advantage of JavaScript's prototypal inheritance,
 we can write less code that is better-organized and more
