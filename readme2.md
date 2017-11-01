@@ -53,30 +53,6 @@ __Example: lets say we're building an app for a car rental company (Rent-a-Car).
 
 **No, that would be inefficient. Classes can provide us with a more efficient solution!**
 
-Before we get deeper in to OOP in JS there are a few loose ends we need to tie up:
-
-<details>
-    <summary>1. What is context?</summary>
-
-    A reference (through `this`) to the object that owns the currently executing code.
-</details>
-<details>
-    <summary>2. What is scope?</summary>
-
-    Where variables are accessible during function invocation.
-</details>
-<details>
-    <summary>3. What `type` is a function?</summary>
-
-    Well it's a function, but a function is a type of object!
-</details>
-<details>
-    <summary>4. Do functions have context?</summary>
-
-    They do!
-</details>
-
-
 ### 2. Intro to classes in ES6 (3 minutes)
 
 **What is a class?**
