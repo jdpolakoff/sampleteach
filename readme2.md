@@ -26,8 +26,6 @@ This will be especially important when you're working on large projects with oth
 
 ### 1. Review of Objects in JS (2 minutes)
 
-If you remember one thing about objects, remember this:
-
 **Objects encapsulate related data and behavior into an organized structure.**
 
 We can define an object using **object literal notation**, like this:
@@ -42,8 +40,42 @@ let car = {
   }
 }
 ```
-*But what if we want a faster, more efficient way to build JavaScript objects?
-Classes can help with that!*
+We're doing two really important things here:
+
+  1. We're encapsulating all data and behavior for a car inside a single object (i.e. a single place)
+  2. We're modeling some real world thing inside our code
+
+The second point is the basis of Object-Oriented Programming and what makes it so powerful.
+
+Why might we want to model real world things in our code?
+
+__Example: lets say we're building an app for a car rental company (Rent-a-Car). If they buy a new car to rent out to customers, they'll want to manage that new car inside the app we're building for them. Do we want to create a new object like the one above for each car new car?__
+
+**No, that would be inefficient. Classes can provide us with a more efficient solution!**
+
+Before we get deeper in to OOP in JS there are a few loose ends we need to tie up:
+
+<details>
+    <summary>1. What is context?</summary>
+
+    A reference (through `this`) to the object that owns the currently executing code.
+</details>
+<details>
+    <summary>2. What is scope?</summary>
+
+    Where variables are accessible during function invocation.
+</details>
+<details>
+    <summary>3. What `type` is a function?</summary>
+
+    Well it's a function, but a function is a type of object!
+</details>
+<details>
+    <summary>4. Do functions have context?</summary>
+
+    They do!
+</details>
+
 
 ### 2. Intro to classes in ES6 (3 minutes)
 
@@ -108,7 +140,8 @@ Let's take a look at an ES6 class.
 ### 3. Inheritance (5 minutes)
 
 - Often we'll need to take our class and expand on it. Think about types of cars, for instance.
-For this case, we create sub-classes through a process called *inheritance.*
+
+- For these cases, we create sub-classes through a process called *inheritance.*
 
 In ES6, we extend an existing class with the `extend` keyword. This will let us create a subclass:
 
