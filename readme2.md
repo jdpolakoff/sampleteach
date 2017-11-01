@@ -2,8 +2,8 @@
 
 ## What does that mean?
 
-All we're talking about is how JavaScript allows us to share code among objects. In JavaScript,
-prototypes are simply objects that help define the behavior of other objects by passing down data and functionality. (More on that later.)
+Prototypal Inheritance is how JavaScript allows us to share code among objects. In JavaScript,
+prototypes are objects that help define the behavior of other objects by passing down data and functionality.
 
 ## Why is prototypal inheritance good for developers?
 
