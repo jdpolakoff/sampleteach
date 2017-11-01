@@ -24,7 +24,7 @@ This will be especially important when you're working on large projects with oth
 
 ## Intro
 
-### 1. Review of Objects in JS (3 minutes)
+### 1. Review of Objects in JS (2 minutes)
 
 If you remember one thing about objects, remember this:
 
@@ -51,7 +51,7 @@ Classes can help with that!*
 
 A class is simply an object that we can use to help us create new objects. Classes pass down data and functionality to other objects. In other words, they are prototypes. (More on that in a minute).
 
-Let's take a look at ES6 class syntax.
+Let's take a look at an ES6 class.
 
 ```js
 
@@ -85,11 +85,11 @@ Let's take a look at ES6 class syntax.
   2) The constructor method. This method is called when a new instance of the class is instantiated.
 
   3) Also, notice the use of ```this```. We'll discuss ```this``` in much greater detail later.
-  
+
 </details>
 
 <details>
-  <summary>Compare with the ES5 Class syntax</summary>
+  <summary>Compare with the ES5 class syntax</summary>
 
   ```js
   function Car(make, model, color) {
@@ -103,10 +103,12 @@ Let's take a look at ES6 class syntax.
   ```
 </details>
 
-### 4. Inheritance (5 minutes)
+### We Do: Let's create an instance of Car with the ```new``` keyword (1 minute)
 
-- Often we'll need to take our class and expand on it.Think about types of Cars, for instance.
-For this case, we create sub-classes through a process called Inheritance.
+### 3. Inheritance (5 minutes)
+
+- Often we'll need to take our class and expand on it. Think about types of cars, for instance.
+For this case, we create sub-classes through a process called *inheritance.*
 
 In ES6, we extend an existing class with the `extend` keyword. This will let us create a subclass:
 
