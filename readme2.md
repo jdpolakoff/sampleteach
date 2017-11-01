@@ -22,8 +22,6 @@ This will be especially important when you're working on large projects with oth
 3. Classes in ES6
 4. Inheritance
 
-## Intro
-
 ### 1. Review of Objects in JS (2 minutes)
 
 **Objects encapsulate related data and behavior into an organized structure.**
@@ -51,7 +49,28 @@ Why might we want to model real world things in our code?
 
 __Example: lets say we're building an app for a car rental company (Rent-a-Car). If they buy a new car to rent out to customers, they'll want to manage that new car inside the app we're building for them. Do we want to create a new object like the one above for each car new car?__
 
-**No, that would be inefficient. Classes can provide us with a more efficient solution!**
+Before we get deeper in to OOP in JS there are a few loose ends we need to tie up:
+
+<details>
+    <summary>1. What is context?</summary>
+
+    A reference (through `this`) to the object that owns the currently executing code.
+</details>
+<details>
+    <summary>2. What is scope?</summary>
+
+    Where variables are accessible during function invocation.
+</details>
+<details>
+    <summary>3. What `type` is a function?</summary>
+
+    Well it's a function, but a function is a type of object!
+</details>
+<details>
+    <summary>4. Do functions have context?</summary>
+
+    They do!
+</details>
 
 ### 2. Intro to classes in ES6 (3 minutes)
 
