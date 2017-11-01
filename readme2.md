@@ -80,8 +80,10 @@ Let's take a look at ES6 class syntax.
   <summary>How is the class syntax different from our object literal syntax?</summary>
 
   The capitalized variable name.
+
   The constructor method. This method is called when a new instance of the class is instantiated.
-  Also, notice the use of ```this```.
+
+  Also, notice the use of ```this```. We'll discuss ```this``` in much greater detail later.
 </details>
 
 <details>
