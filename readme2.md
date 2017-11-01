@@ -84,16 +84,6 @@ Let's take a look at ES6 class syntax.
   Also, notice the use of ```this```.
 </details>
 
-With ES6, JavaScript introduced the `class` keyword that we use to create a class.
-
-
- While the syntax is intended to mimic the class syntax in languages such as Java, ES6 classes continue to rely on prototypal inheritance under the hood.
-
-Prototypal inheritance means that certain functionality and information can be accessed
-through an object's prototype. for one object, use another object as a backup -- go look in the prototype.
-
-
-
 <details>
   <summary>Compare with the ES5 Class syntax</summary>
 
