@@ -2,20 +2,19 @@
 
 ## What does that mean?
 
-All we're talking about is how JavaScript allows us to
-share code among objects. It's a simple concept with a fancy name.
+All we're talking about is how JavaScript allows us to share code among objects.
+That's it. It's a simple concept with a fancy name.
 
 ## Why is prototypal inheritance important?
 
-1) It allow us to write less code -- remember the DRY principle.
+1) It allow us to write less code -- remember the DRY (Don't Repeat Yourself) principle.
 2) It allows us to write code that is better-organized and more maintainable for other developers.
-This will be especially important if you're working on a large project with a team of developers.
+This will be especially important when you're working on large projects with other developers.
 
 ## Learning Objectives
 - Understand how prototypal inheritance gives programmers additional flexibility.
 - Understand how to use namespaces to organize application code.
-- Understand how to use a custom constructor method to set one or more
-properties on a new object.
+- Understand how to use a custom constructor method to set one or more properties on a new object.
 
 ## Overview
 1. Review of Objects
@@ -27,9 +26,11 @@ properties on a new object.
 
 ### 1. Review of Objects in JS (3 minutes)
 
-The important thing to remember about objects is that they encapsulate related data and behavior into an organized structure.
+If you remember one thing about objects, remember this:
 
-Recall that we can define an object like this, using **object literal notation**:
+**Objects encapsulate related data and behavior into an organized structure.**
+
+We can define an object using **object literal notation**, like this:
 
 ```js
 let car = {
@@ -41,28 +42,16 @@ let car = {
   }
 }
 ```
-*But what if we want a faster, more efficient way to build JavaScript objects? Classes can help with that*
+*But what if we want a faster, more efficient way to build JavaScript objects?
+Classes can help with that!*
 
 ### 2. Intro to classes in ES6 (3 minutes)
 
-# Vocabulary we'll need to know:
+**What is a class?**
 
-**Class** - An object that models real world things in our application
+A class is simply an object that we can use to help us create new objects. Classes pass down data and functionality to other objects. In other words, they are prototypes. (More on that in a minute).
 
-**Instance** - An object defined by our class
-
-**Constructor** - The function that defines instances of our class. We pass the
-constructor values that will define properties on our class instance.
-
-**Inheritance** - The passing down of properties from a parent class to a subclass.
-By calling the **super** method, we
-
-With ES6, JavaScript introduced the `class` keyword that we use (along with a capitalized class name)
-to create a class. While the syntax is intended to mimic the class syntax in languages such as
-Java, ES6 classes continue to rely on prototypal inheritance under the hood.
-
-Prototypal inheritance means that certain functionality and information can be accessed
-through an object's prototype. for one object, use another object as a backup -- go look in the prototype.
+Let's take a look at ES6 class syntax.
 
 ```js
 
@@ -88,7 +77,25 @@ through an object's prototype. for one object, use another object as a backup --
 ```
 
 <details>
-  <summary>This was the ES5 syntax</summary>
+  <summary>How is the class syntax different from our object literal syntax?</summary>
+
+  The capitalized variable name.
+  The constructor method. This method is called when a new instance of the class is instantiated.
+  Also, notice the use of ```this```.
+</details>
+
+With ES6, JavaScript introduced the `class` keyword that we use to create a class.
+
+
+ While the syntax is intended to mimic the class syntax in languages such as Java, ES6 classes continue to rely on prototypal inheritance under the hood.
+
+Prototypal inheritance means that certain functionality and information can be accessed
+through an object's prototype. for one object, use another object as a backup -- go look in the prototype.
+
+
+
+<details>
+  <summary>Compare with the ES5 Class syntax</summary>
 
   ```js
   function Car(make, model, color) {
