@@ -3,19 +3,16 @@
 ## What does that mean?
 
 All we're talking about is how JavaScript allows us to
-share code among objects. It's a fairly simple concept
-with a fancy name.
+share code among objects. It's a simple concept with a fancy name.
 
 ## Why is prototypal inheritance important?
 
-It allows us to:
-
-1) Write less code -- (DRY).
-2) Write code that is better-organized and more maintainable for other developers.
+1) It allow us to write less code -- remember the DRY principle.
+2) It allows us to write code that is better-organized and more maintainable for other developers.
+This will be especially important if you're working on a large project with a team of developers.
 
 ## Learning Objectives
-- Understand how *prototypal inheritance* gives programmers additional
-flexibility.
+- Understand how prototypal inheritance gives programmers additional flexibility.
 - Understand how to use namespaces to organize application code.
 - Understand how to use a custom constructor method to set one or more
 properties on a new object.
@@ -26,14 +23,6 @@ properties on a new object.
 3. Classes in ES6
 4. Inheritance
 
-'what are the advantages of OOJS -- i.e. organizing the namespace
-Adding methods on the prototypes of objects in JavaScript is an efficient way to conserve memory (as opposed to copying the methods on each object).
-classes are really just ways to create new objects
-Class Inheritance: A class is like a blueprint — a description of the object to be created. Classes inherit from classes and create subclass relationships: hierarchical class taxonomies.
-Inheritance is fundamentally a code reuse mechanism: A way for different kinds of objects to share code. The way that you share code matters because if you get it wrong, it can create a lot of problems, specifically:
-If you were taught to build classes or constructor functions and inherit from those, what you were taught was not prototypal inheritance. You were taught how to mimic class inheritance using prototypes. See “Common Misconceptions About Inheritance in JavaScript”.
-In JavaScript, class inheritance piggybacks on top of the very rich, flexible prototypal inheritance features built into the language a long time ago, but when you use class inheritance — even the ES6+ `class` inheritance built on top of prototypes, you’re not using the full power & flexibility of prototypal OO. In fact, you’re painting yourself into corners and opting into all of the class inheritance problems.
-in javascript we achieve inheritance through prototypes
 ## Intro
 
 ### 1. Review of Objects in JS (3 minutes)
@@ -49,17 +38,10 @@ let car = {
   color: "red",
   drive: function(){
     console.log("vroom vroom")
-  },
-  gps: function(location){
-    console.log(`Beep boop, driving to ${location}`)
-  },
-  paint: function( newColor ){
-    console.log(`Your car has been painted ${newColor}`)
-    this.color = newColor
   }
 }
 ```
-###**But what if we want a faster, more efficient way to build JavaScript objects?**###
+*But what if we want a faster, more efficient way to build JavaScript objects? Classes can help with that*
 
 ### 2. Intro to classes in ES6 (3 minutes)
 
