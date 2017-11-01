@@ -10,7 +10,7 @@ with a fancy name.
 
 It allows us to:
 
-1) Write less code.
+1) Write less code -- (DRY).
 2) Write code that is better-organized and more maintainable for other developers.
 
 ## Learning Objectives
@@ -38,7 +38,9 @@ in javascript we achieve inheritance through prototypes
 
 ### 1. Review of Objects in JS (3 minutes)
 
-The important thing to remember about objects is that they encapsulate related data and behavior into an organized structure. We saw this when we discussed **object literal notation**. Recall that we can define an object like this:
+The important thing to remember about objects is that they encapsulate related data and behavior into an organized structure.
+
+Recall that we can define an object like this, using **object literal notation**:
 
 ```js
 let car = {
@@ -57,7 +59,7 @@ let car = {
   }
 }
 ```
-**But what if we want a faster, more efficient way to build JS objects?**
+###**But what if we want a faster, more efficient way to build JavaScript objects?**###
 
 ### 2. Intro to classes in ES6 (3 minutes)
 
