@@ -13,6 +13,14 @@ properties of a new object
 3. Classes in ES6
 4. Inheritance
 
+'what are the advantages of OOJS -- i.e. organizing the namespace
+Adding methods on the prototypes of objects in JavaScript is an efficient way to conserve memory (as opposed to copying the methods on each object).
+classes are really just ways to create new objects
+Class Inheritance: A class is like a blueprint — a description of the object to be created. Classes inherit from classes and create subclass relationships: hierarchical class taxonomies.
+Inheritance is fundamentally a code reuse mechanism: A way for different kinds of objects to share code. The way that you share code matters because if you get it wrong, it can create a lot of problems, specifically:
+If you were taught to build classes or constructor functions and inherit from those, what you were taught was not prototypal inheritance. You were taught how to mimic class inheritance using prototypes. See “Common Misconceptions About Inheritance in JavaScript”.
+In JavaScript, class inheritance piggybacks on top of the very rich, flexible prototypal inheritance features built into the language a long time ago, but when you use class inheritance — even the ES6+ `class` inheritance built on top of prototypes, you’re not using the full power & flexibility of prototypal OO. In fact, you’re painting yourself into corners and opting into all of the class inheritance problems.
+
 ## Intro
 
 ### 1. Review of Objects in JS (3 minutes)
@@ -117,15 +125,15 @@ class Car {
     this.model = model
     this.color = color
   }
+  drive() {
+    console.log('vroom vroom')
+  }
 }
 
 class Toyota extends Car {
   constructor(model, color) {
     super(model, color)
     this.make = 'Toyota'
-  }
-  drive() {
-    console.log('vroom vroom')
   }
 }
 ```
