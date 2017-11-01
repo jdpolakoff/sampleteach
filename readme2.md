@@ -36,10 +36,11 @@ let car = {
   }
 }
 ```
-We're doing two really important things here:
+We're doing three really important things here:
 
   1. We're modeling some real world thing (in this case, a car) inside our code.
   2. All the data and behavior for that thing is accessible in a single place.
+  3. We're creating a namespace in the ```car``` object, which helps to declutter the global namespace.
 
 The first point is the basis of Object-Oriented Programming and what makes it so powerful.
 
@@ -76,7 +77,7 @@ Before we get deeper in to OOP in JS there are a few loose ends we need to tie u
 
 1) A class is an object we can use to help us create new objects and define the behavior of new objects.
 
-2) Classes can also pass data and functionality to sub-classes through prototypal inheritance.
+2) Classes can also pass data and functionality to sub-classes through prototypal inheritance. (More on that in a minute).
 
 Let's take a look at an ES6 class.
 
@@ -162,4 +163,5 @@ class Toyota extends Car {
 ```
 
 Write the above code into your console and then run ```Object.getPrototypeOf(Toyota)```.
-What do you get?
+
+What do you get? What is the prototype of the Toyota class?
