@@ -1,5 +1,17 @@
 # Prototypal Inheritance in Object-Oriented Javascript
 
+**What does that mean?**
+
+While it sounds complicated, all we're talking about is how
+JavaScript allows us to share code among different objects.
+
+**Why is it important?**
+
+By taking advantage of JavaScript's prototypal inheritance,
+we can write less code that is better-organized and more
+maintainable while also conserving memory.
+
+
 ## Learning Objectives
 - Demonstrate a use case that explains *prototypal inheritance* and
 what kind of flexibility it gives to programmers
@@ -20,7 +32,7 @@ Class Inheritance: A class is like a blueprint — a description of the obje
 Inheritance is fundamentally a code reuse mechanism: A way for different kinds of objects to share code. The way that you share code matters because if you get it wrong, it can create a lot of problems, specifically:
 If you were taught to build classes or constructor functions and inherit from those, what you were taught was not prototypal inheritance. You were taught how to mimic class inheritance using prototypes. See “Common Misconceptions About Inheritance in JavaScript”.
 In JavaScript, class inheritance piggybacks on top of the very rich, flexible prototypal inheritance features built into the language a long time ago, but when you use class inheritance — even the ES6+ `class` inheritance built on top of prototypes, you’re not using the full power & flexibility of prototypal OO. In fact, you’re painting yourself into corners and opting into all of the class inheritance problems.
-
+in javascript we achieve inheritance through prototypes
 ## Intro
 
 ### 1. Review of Objects in JS (3 minutes)
@@ -44,8 +56,7 @@ let car = {
   }
 }
 ```
-**But what if we want a faster, more efficient way to build JS objects?
- Enter ES6 Classes**
+**But what if we want a faster, more efficient way to build JS objects?**
 
 ### 2. Intro to classes in ES6 (3 minutes)
 
@@ -55,25 +66,18 @@ let car = {
 
 **Instance** - An object defined by our class
 
-**Constructor** - The function that defines instances of our class
+**Constructor** - The function that defines instances of our class. We pass the
+constructor values that will define properties on our class instance.
 
-**Inheritance** - The passing down of properties from a parent class to a subclass
+**Inheritance** - The passing down of properties from a parent class to a subclass.
+By calling the **super** method, we
 
-With ES6, JavaScript introduced the `class` keyword that we use to create a class.
-<details>
-  <summary>This was the ES5 syntax</summary>
+With ES6, JavaScript introduced the `class` keyword that we use (along with a capitalized class name)
+to create a class. While the syntax is intended to mimic the class syntax in languages such as
+Java, ES6 classes continue to rely on prototypal inheritance under the hood.
 
-  ```js
-  function Car(make, model, color) {
-    this.make = make;
-    this.model = model;
-    this.color = color;
-    this.drive = () => console.log('vroom vroom');
-    this.gps = location => console.log(`driving to ${location}`);
-    this.paint = newColor => (this.color = newColor);
-  }
-  ```
-</details>
+Prototypal inheritance means that certain functionality and information can be accessed
+through an object's prototype. for one object, use another object as a backup -- go look in the prototype.
 
 ```js
 
@@ -97,6 +101,21 @@ With ES6, JavaScript introduced the `class` keyword that we use to create a clas
     }
   }
 ```
+
+<details>
+  <summary>This was the ES5 syntax</summary>
+
+  ```js
+  function Car(make, model, color) {
+    this.make = make;
+    this.model = model;
+    this.color = color;
+    this.drive = () => console.log('vroom vroom');
+    this.gps = location => console.log(`driving to ${location}`);
+    this.paint = newColor => (this.color = newColor);
+  }
+  ```
+</details>
 
 ### 4. Inheritance (5 minutes)
 
