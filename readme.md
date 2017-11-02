@@ -1,40 +1,30 @@
-# Object-Oriented Programming in Javascript
+# Prototypal Inheritance in Object-Oriented Javascript
+
+## What does that mean?
+
+Prototypal Inheritance is how JavaScript allows us to share code among objects. Prototypes are simply objects that define the behavior of other objects by passing down data and functionality.
+
+## Why is prototypal inheritance good for developers?
+
+1) It allow us to write less code -- remember the DRY (Don't Repeat Yourself) principle.
+2) It allows us to write code that is better-organized and more maintainable for other developers.
+This will be especially important when you're working on large projects with other developers.
 
 ## Learning Objectives
-- Answer the question, what is Object-Oriented Programming (OOP)?
-- Identify and define: a class, an instance, and a constructor
-- Create a class
-- Use the `new` keyword to create instances of a class
-- Define the concept of inheritance as it pertains to classes
-- Create a class that inherits from another using the `extends` and `super` keywords
+- Learn to use namespaces to organize application code.
+- Learn to use a custom constructor method to set one or more properties on a new object.
+- Learn how prototypal inheritance gives programmers additional flexibility.
 
 ## Overview
 1. Review of Objects
-2. Intro to OOP in JS
-3. Classes in ES6
-4. Inheritance
+2. Classes in ES6
+3. Inheritance
 
-## Schedule
-| Time | Section |
-| --- | --- |
-| 10 min | Review Objects |
-| 10 min | Intro to OOP |
-| 15 min | Defining a Class |
-| 10 min | Domain Modeling and build your first class |
-| 10 min | Classes in ES6 |
-| 20 min | Make an ATM Class |
-| 10 min | Break |
-| 15 min | Inheritance |
-| 20 min | Inheritance Exercise |
-| 10 min | Closing |
+### 1. Review of Objects in JS (3 minutes)
 
-## Intro
+**Objects encapsulate related data and behavior into an organized structure.**
 
-### 1. Review of Objects in JS (10 minutes / 0:10)
-
-The important thing to remember about objects is that they encapsulate related data and behavior into an organized structure. We saw this when we discussed **object literal notation**. Recall that we can define an object like this:
-
-Lets check out `one.js` in the `demos/` folder!
+We can define an object using **object literal notation**, like this:
 
 ```js
 let car = {
@@ -43,38 +33,22 @@ let car = {
   color: "red",
   drive: function(){
     console.log("vroom vroom")
-  },
-  gps: function(location){
-    console.log(`Beep boop, driving to ${location}`)
-  },
-  paint: function( newColor ){
-    console.log(`Your car has been painted ${newColor}`)
-    this.color = newColor
   }
 }
 ```
+We're doing three really important things here:
 
-**Quick Quiz**
+  1. We're modeling some real world thing (in this case, a car) inside our code.
+  2. All the data and behavior for that thing is accessible in a single place.
+  3. We're creating a namespace in the ```car``` object, which helps to declutter the global namespace. Let's go into the console and see what the context of the ```drive``` function is. What would the context of the function be if it were defined outside of the ```car``` object.
 
-1. What is a key-value pair?
-2. What is a property of an object?
-3. What is a method?
-4. Can we store anything in an object?
-
-We're doing two really important things here:
-
-  1. We're encapsulating all data and behavior for a car inside a single object (i.e. a single place)
-  2. We're modeling some real world thing inside our code
-
-The second point is the basis of Object-Oriented Programming and what makes it so powerful.
+The first point is the basis of Object-Oriented Programming and what makes it so powerful.
 
 Why might we want to model real world things in our code?
 
-__Example: lets say we're building an app for a car rental company (Rent-a-Car). If they buy a new car to rent out to customers, they'll want to manage that new car inside the app we're building for them. Do we want to create a new object like the one above for each car new car?__
+__Example: lets say we're building an app for a car rental company (Rent-a-Car). If they buy a new car to rent out to customers, they'll want to manage that new car inside the app we're building for them. Do we want to create a new object like the one above for each car new car? No, most likely we want to use a class to help us create the new cars.__
 
-### 2. Intro to OOP in JS (5 minutes / 0:15)
-
-Before we get in to OOP in JS there are a few loose ends we need to tie up:
+Before we get deeper in to OOP in JS there are a few loose ends we need to tie up:
 
 <details>
     <summary>1. What is context?</summary>
@@ -97,11 +71,53 @@ Before we get in to OOP in JS there are a few loose ends we need to tie up:
     They do!
 </details>
 
-### We Do: Defining a class (10 minutes / 0:25)
-Lets check out `one.js` in the `demos/` folder!
+### 2. Classes in ES6 (5 minutes)
+
+**What is a class?**
+
+1) A class is an object we can use to help us create new objects and define the behavior of new objects.
+
+2) Classes can also pass data and functionality to sub-classes through prototypal inheritance. (More on that in a minute).
+
+Let's take a look at an ES6 class.
+
+```js
+
+  class Car {
+    constructor(make, model, color) {
+      this.make = make
+      this.model = model
+      this.color = color
+    }
+
+    drive() {
+      console.log('vroom vroom')
+    }
+
+    gps( location ) {
+      console.log(`beep beep, driving to ${location}`)
+    }
+
+    paint( newColor ) {
+      this.color = newColor
+    }
+  }
+```
 
 <details>
-  <summary>ES5 Class</summary>
+  <summary>How is the class syntax different from our object literal syntax?</summary>
+
+
+  1) The capitalized variable name.
+
+  2) The constructor method. This method is called when a new instance of the class is instantiated.
+
+  3) Also, notice the use of ```this```. We'll discuss ```this``` in much greater detail later.
+
+</details>
+
+<details>
+  <summary>Compare with the ES5 class syntax</summary>
 
   ```js
   function Car(make, model, color) {
@@ -115,80 +131,17 @@ Lets check out `one.js` in the `demos/` folder!
   ```
 </details>
 
-#### Vocabulary:
+#### We Do: Let's create an instance of Car with the ```new``` keyword (1 minute)
 
-**Class** - an object that models real world things in our application
+### 3. Inheritance (5 minutes)
 
-**Instance** - a object defined by our class
+- Often we'll need to take our class and expand on it. Think about types of cars, for instance.
 
-**Constructor** - the function that defines instances of our class
+- For these cases, we create sub-classes through a process called *inheritance.*
 
-#### You Do: Domain Modeling and building your first class! (10 minutes / 0:35)
+In ES6, we extend an existing class with the `extend` keyword. This will let us create a subclass.
 
-Lets check out `two.js` in the `exercises/` folder!
-
-### 3. Classes in ES6 (10 minutes / 0:25)
-Understanding the old syntax is important for understanding the new syntax. With ES6, the language was updated to bring the syntax more inline with how other popular programming languages handle OOP. This includes the introduction of the `class` keyword. Nothing changed under the hood, just what we type to create a class.
-
-Lets checkout `three.js` in the `exercises/` folder!
-
-<details>
-  <summary>Solution</summary>
-
-```js
-class Car {
-  constructor(make, model, color) {
-    this.make = make
-    this.model = model
-    this.color = color
-  }
-
-  drive() {
-    console.log('vroom vroom')
-  }
-
-  gps( location ) {
-    console.log(`beep beep, driving to ${location}`)
-  }
-
-  paint( newColor ) {
-    this.color = newColor
-  }
-}
-```
-
-</details>
-
-This is the syntax that you'll see most frequently now!
-
-#### You Do: [Make an ATM Class](https://git.generalassemb.ly/ga-wdi-exercises/es6-classes-practice) (20 minutes / 1:05)
-
-> 15 minutes exercise. 5 minutes review.
-
-## Break (10 minutes / 1:15)
-
-### 4. Inheritance (15 minutes / 1:30)
-
-Often we'll need to take our class and expand on it for particular types of implementations of it. Think about types of Cars, for instance. For this case, we create sub-classes through a process called Inheritance.
-
-In ES6, we extend an existing class with the `extend` keyword. This will let us create a subclass:
-
-```js
-class Car {
-  constructor(make, color) {
-    this.make = make
-    this.color = color
-  }
-}
-
-class Toyota extends Card {
-  drive() {
-    console.log('vroom vroom')
-  }
-}
-```
-
-If we have properties that we want to add to our subclass, we still need to take in the properties for our parent class, and pass them up to our parent class with `super`.
+If we have properties that we want to add to our subclass from our parent class, we need to call the `super` method. `Super` calls the constructor function on the parent class.
 
 ```js
 class Car {
@@ -196,45 +149,37 @@ class Car {
     this.model = model
     this.color = color
   }
+  drive() {
+    console.log('vroom vroom')
+  }
 }
 
-class Toyota extends Card {
+class Toyota extends Car {
   constructor(model, color) {
     super(model, color)
     this.make = 'Toyota'
   }
-  drive() {
-    console.log('vroom vroom')
-  }
+}
+```
+Let's go into the console and create a new Toyota. Then let's try to call the ```drive()``` method from within the context of that new instance of a Toyota. What happens?
+
+What happens if we insert this method into the Toyota class and then call the method from a newly instantiated object?
+```js
+drive() {
+  console.log('beep beep')
 }
 ```
 
-## You Do: [Inheritance](https://git.generalassemb.ly/ga-wdi-exercises/es6-classes-inheritance-practice) (20 minutes / 1:50)
+By creating sub-classes that inherit from parent classes, developers gain flexibility in how they structure their data and functionality.
 
-> 15 minutes exercise. 5 minutes review.
+**BONUS:** Write the above code into your console and then run ```Object.getPrototypeOf(Toyota)```.
 
--------
+What do you get? What is the prototype of the Toyota class?
 
-## Closing / Questions (10 minutes / 2:00)
+## Closing / Questions
 
 * What are the benefits to using an OOP approach to programming?
 * What is a class? What is `new`? How are they related?
 * What does it mean to use "inheritance" when working with classes?
 * How do we indicate that one class inherits from another?
 * What does `super` mean?
-
-## Homework: [Geometry](https://git.generalassemb.ly/ga-wdi-exercises/js_geometry)
-
-## Additional Reading
-
-* [MDN Documentation on Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
-* [Introduction to Javascript ES6 Classes](https://strongloop.com/strongblog/an-introduction-to-javascript-es6-classes/)
-* [Getters, Setters, and Organizing Responsibility in Javascript](http://raganwald.com/2015/08/24/ready-get-set-go.html)
-* [Static Members in ES6](http://odetocode.com/blogs/scott/archive/2015/02/02/static-members-in-es6.aspx)
-* [Lesson: JS View Classes](https://git.generalassemb.ly/ga-wdi-lessons/js-view-classes)
-
-#### Prototypical Inheritance
-
-* [Inheritance and the Prototype Chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
-* [ES6 Classes and Javascript Prototypes](https://reinteractive.com/posts/235-es6-classes-and-javascript-prototypes)
-* [Master the Javascript Interview: What's the Difference Between Class & Prototypical Inheritance](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9#.uzl8ohf8c)
