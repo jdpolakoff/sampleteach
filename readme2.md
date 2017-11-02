@@ -40,7 +40,7 @@ We're doing three really important things here:
 
   1. We're modeling some real world thing (in this case, a car) inside our code.
   2. All the data and behavior for that thing is accessible in a single place.
-  3. We're creating a namespace in the ```car``` object, which helps to declutter the global namespace.
+  3. We're creating a namespace in the ```car``` object, which helps to declutter the global namespace. Let's go into the console and see what the context of the ```drive``` function is. What would the context of the function be if it were defined outside of the ```car``` object.
 
 The first point is the basis of Object-Oriented Programming and what makes it so powerful.
 
@@ -161,7 +161,8 @@ class Toyota extends Car {
   }
 }
 ```
+Let's go into the console and create a new Toyota. Then let's try to call the ```drive()``` method from within the context of that new instance of a Toyota. What happens?
 
-Write the above code into your console and then run ```Object.getPrototypeOf(Toyota)```.
+**BONUS:** Write the above code into your console and then run ```Object.getPrototypeOf(Toyota)```.
 
 What do you get? What is the prototype of the Toyota class?
