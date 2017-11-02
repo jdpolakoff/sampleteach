@@ -163,6 +163,16 @@ class Toyota extends Car {
 ```
 Let's go into the console and create a new Toyota. Then let's try to call the ```drive()``` method from within the context of that new instance of a Toyota. What happens?
 
+By creating sub-classes in this way, developers have considerable flexibility in how they structure their data and functionality.
+
 **BONUS:** Write the above code into your console and then run ```Object.getPrototypeOf(Toyota)```.
 
 What do you get? What is the prototype of the Toyota class?
+
+## Closing / Questions
+
+* What are the benefits to using an OOP approach to programming?
+* What is a class? What is `new`? How are they related?
+* What does it mean to use "inheritance" when working with classes?
+* How do we indicate that one class inherits from another?
+* What does `super` mean?
