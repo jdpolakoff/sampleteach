@@ -163,7 +163,14 @@ class Toyota extends Car {
 ```
 Let's go into the console and create a new Toyota. Then let's try to call the ```drive()``` method from within the context of that new instance of a Toyota. What happens?
 
-By creating sub-classes in this way, developers have considerable flexibility in how they structure their data and functionality.
+What happens if we insert this method into the Toyota class and then call the method from a newly instantiated object?
+```js
+drive() {
+  console.log('beep beep')
+}
+``` 
+
+By creating sub-classes that inherit from parent classes, developers gain flexibility in how they structure their data and functionality.
 
 **BONUS:** Write the above code into your console and then run ```Object.getPrototypeOf(Toyota)```.
 
