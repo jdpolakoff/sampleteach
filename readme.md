@@ -110,7 +110,7 @@ Let's take a look at an ES6 class.
 
   1) The capitalized variable name.
 
-  2) The constructor method. This method is called when a new instance of the class is instantiated.
+  2) The constructor method. This method assigns properties to objects when a new instance of the class is instantiated.
 
   3) Also, notice the use of ```this```. We'll discuss ```this``` in much greater detail later.
 
